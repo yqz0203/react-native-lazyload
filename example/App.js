@@ -9,31 +9,42 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
-} from 'react-native';
+  View,
+  Button,
+  Modal
+} from 'react-native'
 
-import { lazyloadComponent, lazyloadContainer } from '../src/lazyloadComponent'
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-  'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-  'Shake or press menu button for dev menu',
-});
+import ScrollViewExample from './ScrollViewExample'
+import FlatListViewExample from './FlatListViewExample'
 
 export default class App extends Component {
+  state = {
+    modalVisible: false,
+    ExampleType: null
+  }
+
+  renderExample = () => {
+    const { ExampleType } = this.state
+    if (!ExampleType) return null
+    return <ExampleType />
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <Button title={'scrollview example'} onPress={() => { this.setState({ ExampleType: ScrollViewExample, modalVisible: true }) }} />
+        <Button title={'flatlist example'} onPress={() => { this.setState({ ExampleType: FlatListViewExample, modalVisible: true }) }} />
+        <Modal
+          visible={this.state.modalVisible}
+          animationType={'slide'}
+          style={{ backgroundColor: '#e8e8e8' }}
+        >
+          {this.renderExample()}
+          <Button
+            title={'close'}
+            onPress={() => { this.setState({ modalVisible: false }) }}
+          />
+        </Modal>
       </View>
     );
   }
@@ -42,18 +53,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    paddingTop: 30,
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  }
 });
