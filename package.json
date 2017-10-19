@@ -1,5 +1,5 @@
 {
-  "name": "rn-lazyload",
+  "name": "@yqz0203/rn-lazyload",
   "version": "0.0.1",
   "description": "enjoy easier lazyload",
   "main": "main/index.js",

@@ -6,11 +6,11 @@ react-native懒加载组件，简单易用，方便扩展。
 
 ## 安装
 
-`yarn add rn-lazyload`(建议)
+`yarn add @yqz0203/rn-lazyload`(建议)
 
 或者
 
-`npm install rn-lazyload`
+`npm install @yqz0203/rn-lazyload`
 
 
 ## 使用
