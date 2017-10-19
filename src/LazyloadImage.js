@@ -34,7 +34,6 @@ export default class LazyloadImage extends Component {
     if (!inViewPort && !this.enterred) {
       return null
     } else {
-      console.log(this.enterred)
       this.enterred = true
       return <Animated.Image
         source={source}
