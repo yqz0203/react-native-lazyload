@@ -1,0 +1,31 @@
+{
+  "name": "rn-lazyload",
+  "version": "0.0.1",
+  "description": "enjoy easier lazyload",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yqz0203/rn-lazyload.git"
+  },
+  "keywords": [
+    "lazyload",
+    "react-native",
+    "image"
+  ],
+  "author": "yqz0203@hotmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yqz0203/rn-lazyload/issues"
+  },
+  "homepage": "https://github.com/yqz0203/rn-lazyload#readme",
+  "dependencies": {
+    "babel-eslint": "^8.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-plugin-react": "^7.4.0"
+  }
+}
