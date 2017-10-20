@@ -12,7 +12,8 @@ const LazyLoadView = lazyloadComponent(View)
 
 export default class LazyloadImage extends Component {
   static defaultProps = {
-    placeholder: require('./placeholder.png')
+    placeholder: require('./placeholder.png'),
+    imageExtraProps: {}
   }
 
   state = {
@@ -29,7 +30,7 @@ export default class LazyloadImage extends Component {
   }
 
   renderSourceImage(inViewPort) {
-    const { source } = this.props
+    const { source, imageExtraProps } = this.props
     const { aniValue } = this.state
     if (!inViewPort && !this.enterred) {
       return null
@@ -39,6 +40,7 @@ export default class LazyloadImage extends Component {
         source={source}
         onLoad={this.handleOnLoad}
         style={[{ opacity: aniValue }, styles.source]}
+        {...imageExtraProps}
       />
     }
   }
