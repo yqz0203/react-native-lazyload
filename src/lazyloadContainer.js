@@ -33,7 +33,9 @@ export default lazyloadContainer = (Comp) => {
     }
 
     rootRef = (e) => {
-      this.rootRef = e
+      if (e) {
+        this.rootRef = e
+      }
     }
 
     handleLayout = () => {

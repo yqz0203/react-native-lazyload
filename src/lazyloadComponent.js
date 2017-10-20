@@ -76,8 +76,10 @@ export default lazyloadComponent = (Comp, _config) => {
 
     ref = (e) => {
       const { ref } = this.props
-      this.compRef = e
       ref && ref(e)
+      if (e) {
+        this.compRef = e
+      }
     }
 
     componentDidMount() {
