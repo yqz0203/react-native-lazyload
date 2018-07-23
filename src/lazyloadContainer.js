@@ -65,7 +65,7 @@ export default lazyloadContainer = (Comp) => {
     render() {
       const { wrapperStyle } = this.props
       return (
-        <View style={[{ flex: 1 }, wrapperStyle]} ref={this.rootRef}>
+        <View style={[{ flex: 1 }, wrapperStyle]} ref={this.rootRef} collapsable={false}>
           <Comp {...this.props} onLayout={this.handleLayout} onScroll={this.handleScroll} />
         </View>
       )
